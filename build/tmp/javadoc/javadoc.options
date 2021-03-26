@@ -1,0 +1,8 @@
+-classpath 'C:\\Users\\Home\\IdeaProjects\\TP_GRADLE\\build\\classes\\java\\main;C:\\Users\\Home\\IdeaProjects\\TP_GRADLE\\build\\resources\\main'
+-d 'C:\\Users\\Home\\IdeaProjects\\TP_GRADLE\\build\\docs\\javadoc'
+-doctitle 'TP_GRADLE 1.0-SNAPSHOT API'
+-quiet 
+-windowtitle 'TP_GRADLE 1.0-SNAPSHOT API'
+'C:\\Users\\Home\\IdeaProjects\\TP_GRADLE\\src\\main\\java\\com\\example\\exception\\NoSquareException.java'
+'C:\\Users\\Home\\IdeaProjects\\TP_GRADLE\\src\\main\\java\\com\\example\\model\\Matrix.java'
+'C:\\Users\\Home\\IdeaProjects\\TP_GRADLE\\src\\main\\java\\com\\example\\service\\MatrixMathematics.java'
