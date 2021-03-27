@@ -11,7 +11,7 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        mail(to: 'hk_hab_el_hames@esi.dz', subject: 'gradle build', body: '$env.BUILD_URL  has result : $(currentBuild.result)')
+        mail(to: 'hk_hab_el_hames@esi.dz', subject: 'gradle build', body: 'the result of build is : ${currentBuild.result}')
       }
     }
 
