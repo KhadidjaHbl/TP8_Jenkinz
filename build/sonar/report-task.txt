@@ -2,5 +2,5 @@ projectKey=com.example:TP_GRADLE
 serverUrl=http://localhost:9000
 serverVersion=7.4.0.18908
 dashboardUrl=http://localhost:9000/dashboard?id=com.example%3ATP_GRADLE
-ceTaskId=AXhzQhtDGXo2eNk4byvY
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXhzQhtDGXo2eNk4byvY
+ceTaskId=AXhzgMDUGXo2eNk4byvd
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXhzgMDUGXo2eNk4byvd
