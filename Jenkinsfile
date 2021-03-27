@@ -11,7 +11,7 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        emailext(body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n", subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}")
+        mail(to: 'hk_hab_el_hames@esi.dz', subject: 'gradle build', body: '$env.BUILD_URL  has result : $(currentBuild.result)')
       }
     }
 
