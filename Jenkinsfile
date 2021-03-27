@@ -10,13 +10,9 @@ pipeline {
     }
 
     stage('Mail Notification') {
-      post {
-        failure {
-          mail(subject: 'notification phase Build', body: 'Le build est execute avec echec ', to: 'hk_hab_el_hames@esi.dz')
-        }
-
-        success {
-          mail(subject: 'notification phase Build', body: 'Le build est execute avec succes ', to: 'hk_hab_el_hames@esi.dz')
+      always {
+        emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n",
+                subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}"
         }
 
       }
