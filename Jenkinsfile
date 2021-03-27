@@ -10,5 +10,11 @@ pipeline {
       }
     }
 
+    stage('Mail Notification') {
+      steps {
+        mail(subject: 'notification phase Build', body: 'cc', to: 'hk_hab_el_hames@esi.dz')
+      }
+    }
+
   }
 }
