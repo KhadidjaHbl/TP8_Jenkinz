@@ -5,8 +5,7 @@ pipeline {
       steps {
         powershell 'gradle build'
         powershell 'gradle javadoc'
-        archiveArtifacts 'build/libs/*.jar'
-        archiveArtifacts 'build/docs/javadoc/*'
+        archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
       }
     }
 
