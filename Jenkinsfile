@@ -15,15 +15,7 @@ pipeline {
       }
     }
 
-    stage('Code Analysis') {
-          steps {
-            withSonarEnv('SonarQube'){bat "gradlew sonarqube"
-                }
-          script {
-              def qualitygate= waitForQualityGate()
-              if (qualitygate.status != "OK") {error "Pipeline aborted : ${qualitygate.status}"}
-          }
-       }
-     }
+    
+     
  }
 }
