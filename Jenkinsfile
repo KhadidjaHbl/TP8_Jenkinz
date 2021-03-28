@@ -43,5 +43,11 @@ pipeline {
         }
       }
 
+      stage('Deployment') {
+        steps {
+          bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle publish'
+        }
+      }
+
     }
   }
