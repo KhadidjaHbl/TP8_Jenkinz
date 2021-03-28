@@ -23,9 +23,11 @@ pipeline {
               bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle sonarqube'
             }
 
-            timeout(time: 1, unit: 'HOURS') {
-              waitForQualityGate true
-            }
+              echo "test2"
+              def qg = waitForQualityGate()
+              if (qg.status != 'OK') {
+                    error "Pipeline aborted due to quality gate failure: ${qg.status}"
+                    echo "test3" }
 
           }
         }
