@@ -11,9 +11,8 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        bat 'gradle javadoc'
-      }
+        mail(to:'hk_hab_el_hames@esi.dz', subject:"status of build: ${currentBuild.fullDisplayName}", body: "${env.BUILD_URL} has result ${currentBuild.result}")
     }
 
   }
-}
+  } }
