@@ -22,9 +22,11 @@ pipeline {
             withSonarQubeEnv('SonarQube') {
               bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle sonarqube'
             }
-            
+
             timeout(time: 1, unit: 'HOURS') {
-            waitForQualityGate abortPipeline : true}
+              waitForQualityGate true
+            }
+
           }
         }
 
