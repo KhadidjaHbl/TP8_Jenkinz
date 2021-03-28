@@ -19,7 +19,7 @@ pipeline {
       parallel {
         stage('Code Analysis') {
           steps {
-            withSonarQubeEnv('SonarQube') {
+            withSonarQubeEnv('SonarQube'){
               bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle sonarqube'
             }
 
