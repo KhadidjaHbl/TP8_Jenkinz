@@ -15,12 +15,7 @@ pipeline {
       }
     }
 
-    stage('Code Analysis') {
-      steps {
-          withSonarEnv('SonarQube'){bat "./gradlew sonarqube"}
-          waitForQualityGate abortPipeline: true
-       }
-    }
+    
 
   }
 }
