@@ -39,7 +39,7 @@ pipeline {
 
       stage('Test Reporting') {
         steps {
-          cucumber '**/cucumber.json'
+          cucumber 'reports/cucumber/*.json'
         }
       }
 
