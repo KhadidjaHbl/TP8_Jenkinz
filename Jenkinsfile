@@ -11,8 +11,9 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        mail(to:'hk_hab_el_hames@esi.dz', subject:"status of build: ${currentBuild.fullDisplayName}", body: "${env.BUILD_URL} has result ${currentBuild.result}")
+        mail(to: 'hk_hab_el_hames@esi.dz', subject: "status of build: ${currentBuild.fullDisplayName}", body: "${env.BUILD_URL} has result ${currentBuild.result}")
+      }
     }
 
   }
-  } }
+}
