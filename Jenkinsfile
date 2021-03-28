@@ -17,9 +17,11 @@ pipeline {
 
     stage('sonarqube') {
       steps {
-                withSonarQubeEnv('SonarQube') {
-                    bat "./gradlew sonarqube"
-                }
+        withSonarQubeEnv('SonarQube') {
+          bat './gradlew sonarqube'
+        }
+
+        waitForQualityGate true
       }
     }
 
