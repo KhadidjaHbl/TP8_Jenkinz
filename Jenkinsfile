@@ -15,9 +15,9 @@ pipeline {
       }
     }
 
-    stage(' Code Analysis') {
+    stage('sonarqube') {
       steps {
-        waitForQualityGate true
+        bat 'sonar'
       }
     }
 
