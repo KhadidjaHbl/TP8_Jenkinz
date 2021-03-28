@@ -6,7 +6,7 @@ pipeline {
         powershell 'gradle build'
         powershell 'gradle javadoc'
         archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
-        powershell 'gradle build'
+        bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle build'
       }
     }
 
