@@ -37,5 +37,11 @@ pipeline {
         }
       }
 
+      stage('Test Reporting') {
+        steps {
+          cucumber '/cucumber.json'
+        }
+      }
+
     }
   }
