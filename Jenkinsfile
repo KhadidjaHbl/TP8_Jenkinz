@@ -51,8 +51,7 @@ pipeline {
 
       stage('Slack Notification') {
         steps {
-          slackSend()
-          slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'T01N51K5L01/B01SK5ZK7HT/8g4ZsGtZIBvn64iN5jzsefbu', channel: 'tpGradle', message: 'successful deployment !!!', teamDomain: 'tpgradle-workspace.slack.com')
+          slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'T01N51K5L01/B01SK5ZK7HT/8g4ZsGtZIBvn64iN5jzsefbu', attachments: '"hello"', blocks: '"block"', channel: '"tpGradle"', message: '"deployment finished"', teamDomain: '"tpgradle-workspace.slack.com"')
         }
       }
 
