@@ -19,7 +19,7 @@ pipeline {
       parallel {
         stage('Code Analysis') {
           steps {
-            withSonarEnv('SonarQube'){bat "C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle.bat sonarqube"
+            withSonarEnv('SonarQube'){bat "gradlew sonarqube"
                 }
           script {
               def qualitygate= waitForQualityGate()
