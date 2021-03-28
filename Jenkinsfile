@@ -22,7 +22,7 @@ pipeline {
             withSonarEnv('SonarQube'){bat 'C:\Users\Home\Downloads\gradle-5.6\bin\gradle.bat sonarqube'}
           script {
               def qualitygate= waitForQualityGate()
-              if (qualitygate.status != "OK") {error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}}
+              if (qualitygate.status != "OK") {error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"}
           }}
           }
        }
