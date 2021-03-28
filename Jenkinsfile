@@ -11,7 +11,7 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        powershell 'gradle javadoc'
+        bat 'gradle javadoc'
       }
     }
 
