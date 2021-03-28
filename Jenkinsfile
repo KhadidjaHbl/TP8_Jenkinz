@@ -12,7 +12,15 @@ pipeline {
 
     stage('Mail Notification') {
       steps {
-        mail(to: 'hk_hab_el_hames@esi.dz', subject: 'gradle build', body: 'the result of build is : ${currentBuild.result}')
+        def subject = "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'"
+        def summary = "${subject} (${env.BUILD_URL})"
+        def details = """<p>STARTED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>"""
+         emailext (
+         subject: subject,
+         body: details,
+         recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+    )
       }
     }
 
