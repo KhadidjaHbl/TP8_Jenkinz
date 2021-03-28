@@ -23,9 +23,8 @@ pipeline {
               bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle sonarqube'
             }
 
-            timeout(time: 1, unit: 'MINUTES') {
               waitForQualityGate true
-            }
+            
 
           }
         }
