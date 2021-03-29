@@ -19,7 +19,7 @@ dependencies {
 
 publishing {
     repositories {
-        maven {
+        maven{
             url 'https://mymavenrepo.com/repo/Xa8YLa2s5XiIwEyWJeFx/'
             credentials {
                 username 'myMavenRepo'
@@ -29,8 +29,7 @@ publishing {
     }
 
     publications {
-        maven(MavenPublication)
-                {
+        maven(MavenPublication) {
             from components.java
         }
     }
