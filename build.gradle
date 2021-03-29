@@ -28,6 +28,7 @@ publishing {
                 username 'myMavenRepo'
                 password 'test'
             }
+            
         }
     }
 
@@ -37,7 +38,7 @@ publishing {
             from components.java
         }
     }
-    
+
 }
 
 
