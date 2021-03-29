@@ -29,7 +29,8 @@ publishing {
     }
 
     publications {
-        maven(MavenPublication) {
+        maven(MavenPublication)
+                {
             from components.java
         }
     }
