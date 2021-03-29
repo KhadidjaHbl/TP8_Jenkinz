@@ -19,21 +19,15 @@ pipeline {
       parallel {
         stage('Code Analysis') {
           steps {
-            withSonarQubeEnv('SonarQube') {
-              bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle sonarqube'
-            }
+            withSonarQubeEnv('SonarQube') {bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle sonarqube'}
 
             script {
               echo "test2"
               def qg = waitForQualityGate()
-              if (qg.status != 'OK') {
-                error "Pipeline aborted due to quality gate failure: ${qg.status}"
-                echo "test3" }
+              if (qg.status != 'OK') {error "Pipeline aborted due to quality gate failure: ${qg.status}"}
               }
-
             }
           }
-
         }
       }
 
@@ -54,6 +48,5 @@ pipeline {
           slackSend(baseUrl: 'https://hooks.slack.com/services/', token: 'T01N51K5L01/B01SK5ZK7HT/8g4ZsGtZIBvn64iN5jzsefbu', channel: 'tpGradle', message: 'deployment finished', teamDomain: 'tpgradle-workspace.slack.com')
         }
       }
-
     }
   }
