@@ -17,8 +17,8 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-publishing {
-    repositories {
+publishing{
+    repositories{
         maven{
             url 'https://mymavenrepo.com/repo/Xa8YLa2s5XiIwEyWJeFx/'
             credentials {
