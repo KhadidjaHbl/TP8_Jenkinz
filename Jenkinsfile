@@ -49,7 +49,7 @@ pipeline {
 
     stage('Slack Notification') {
       steps {
-        slackSend(baseUrl: 'https://hooks.slack.com/services', token: 'T01N51K5L01/B01SK5ZK7HT/8g4ZsGtZIBvn64iN5jzsefbu', channel: '#tpGradle', message: 'deployment finished', teamDomain: 'esi')
+        slackSend(baseUrl: 'https://hooks.slack.com/services', token: 'T01N51K5L01/B01SK5ZK7HT/8g4ZsGtZIBvn64iN5jzsefbu', channel: '#project', message: 'deployment finished', teamDomain: 'esi')
       }
     }
 
