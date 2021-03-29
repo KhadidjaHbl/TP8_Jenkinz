@@ -17,7 +17,13 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
-}
+    maven {
+        url 'https://mymavenrepo.com/repo/Xa8YLa2s5XiIwEyWJeFx/'
+        credentials {
+            username 'myMavenRepo'
+            password 'test'
+        }
+}}
 
 dependencies {
     testImplementation 'io.cucumber:cucumber-java:6.0.0'
