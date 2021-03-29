@@ -2,16 +2,19 @@ pipeline {
   agent any
   stages {
     stage('Build') {
+      
+      post { 
+      failure {
+        mail(to: 'hk_hab_el_hames@esi.dz', subject: "status of build: ${currentBuild.fullDisplayName}", body: "build failed")
+      }}
+      
       steps {
         bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle build'
         bat 'C:\\Users\\Home\\Downloads\\gradle-5.6\\bin\\gradle javadoc'
         archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
         junit 'build/test-results/test/*.xml'
       }
-      post { 
-      failure {
-        mail(to: 'hk_hab_el_hames@esi.dz', subject: "status of build: ${currentBuild.fullDisplayName}", body: "build failed"})
-      }}
+   
     }
 
     stage('Mail Notification') {
