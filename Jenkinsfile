@@ -8,6 +8,9 @@ pipeline {
         archiveArtifacts 'build/libs/*.jar, build/docs/javadoc/*'
         junit 'build/test-results/test/*.xml'
       }
+      post { 
+      failure {
+        mail(to: 'hk_hab_el_hames@esi.dz', subject: "status of build: ${currentBuild.fullDisplayName}", body: "build failed"})
     }
 
     stage('Mail Notification') {
